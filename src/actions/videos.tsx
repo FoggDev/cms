@@ -1,24 +1,24 @@
-"use server";
+'use server'
 
-import { api } from "@/lib/api";
+import { api } from '@/lib/api'
 
 export async function fetchVideos() {
   try {
     const { data } = await api.fetch(
-      "/videos",
+      '/videos',
       {
-        cache: "no-store",
+        cache: 'no-store'
       },
       {
         populate: {
-          thumbnail: ["*"],
-        },
+          thumbnail: ['*']
+        }
       }
-    );
+    )
 
-    return data;
+    return data
   } catch (error) {
-    console.error("Error fetching videos data:", error);
-    return null;
+    console.error('Error fetching videos data:', error)
+    return null
   }
 }

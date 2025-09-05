@@ -1,22 +1,24 @@
-"use client";
+'use client'
 
-import { Card, CardContent } from "@/components/ui/card";
-import { Play } from "lucide-react";
-import { useState } from "react";
-import { VideoModal } from "./video-modal";
-import { VideoTutorial } from "@/lib/mock-data";
+import { Play } from 'lucide-react'
+import { useState } from 'react'
+
+import { Card, CardContent } from '@/components/ui/card'
+import { VideoTutorial } from '@/lib/mock-data'
+
+import { VideoModal } from './video-modal'
 
 export function VideoTutorialsSection({ videos }: { videos: VideoTutorial[] }) {
   const [selectedVideo, setSelectedVideo] = useState<{
-    id: string;
-    title: string;
-  } | null>(null);
+    id: string
+    title: string
+  } | null>(null)
 
-  const tutorials = videos ?? [];
+  const tutorials = videos ?? []
 
   const handleVideoClick = (tutorial: (typeof tutorials)[0]) => {
-    setSelectedVideo({ id: tutorial.youtubeVideoId, title: tutorial.title });
-  };
+    setSelectedVideo({ id: tutorial.youtubeVideoId, title: tutorial.title })
+  }
 
   return (
     <section className="py-24 bg-background">
@@ -42,7 +44,7 @@ export function VideoTutorialsSection({ videos }: { videos: VideoTutorial[] }) {
                 <img
                   src={
                     `http://localhost:4000${tutorial.thumbnail.url}` ||
-                    "/placeholder.svg"
+                    '/placeholder.svg'
                   }
                   alt={tutorial.thumbnail.alternativeText}
                   className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
@@ -80,9 +82,9 @@ export function VideoTutorialsSection({ videos }: { videos: VideoTutorial[] }) {
       <VideoModal
         isOpen={!!selectedVideo}
         onClose={() => setSelectedVideo(null)}
-        videoId={selectedVideo?.id || ""}
-        title={selectedVideo?.title || ""}
+        videoId={selectedVideo?.id || ''}
+        title={selectedVideo?.title || ''}
       />
     </section>
-  );
+  )
 }

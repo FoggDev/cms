@@ -1,14 +1,15 @@
-"use client";
+'use client'
 
-import { Button } from "@/components/ui/button";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { useState } from "react";
-import { X, Menu } from "lucide-react";
+import { Menu, X } from 'lucide-react'
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
+import { useState } from 'react'
+
+import { Button } from '@/components/ui/button'
 
 export function Header({ siteConfig }: { siteConfig: any }) {
-  const pathname = usePathname();
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const pathname = usePathname()
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -33,8 +34,8 @@ export function Header({ siteConfig }: { siteConfig: any }) {
               href={item.url}
               className={`text-sm font-medium transition-colors cursor-pointer ${
                 pathname === item.url
-                  ? "text-primary font-semibold"
-                  : "text-muted-foreground hover:text-foreground"
+                  ? 'text-primary font-semibold'
+                  : 'text-muted-foreground hover:text-foreground'
               }`}
             >
               {item.label}
@@ -81,8 +82,8 @@ export function Header({ siteConfig }: { siteConfig: any }) {
                   onClick={() => setIsMobileMenuOpen(false)}
                   className={`text-sm font-medium transition-colors cursor-pointer ${
                     pathname === item.url
-                      ? "text-primary font-semibold"
-                      : "text-muted-foreground hover:text-foreground"
+                      ? 'text-primary font-semibold'
+                      : 'text-muted-foreground hover:text-foreground'
                   }`}
                 >
                   {item.label}
@@ -105,5 +106,5 @@ export function Header({ siteConfig }: { siteConfig: any }) {
         </div>
       )}
     </header>
-  );
+  )
 }

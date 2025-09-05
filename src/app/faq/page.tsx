@@ -1,13 +1,14 @@
-import { Header } from "@/components/header";
-import { Footer } from "@/components/footer";
-import { FAQSection } from "@/components/faq-section";
-import { fetchSiteConfig } from "@/actions/site-config";
-import { fetchFAQ } from "@/actions/faq";
-import { NextPage } from "next";
+import { NextPage } from 'next'
+
+import { fetchFAQ } from '@/actions/faq'
+import { fetchSiteConfig } from '@/actions/site-config'
+import { FAQSection } from '@/components/faq-section'
+import { Footer } from '@/components/footer'
+import { Header } from '@/components/header'
 
 const Page: NextPage = async () => {
-  const siteConfig = await fetchSiteConfig();
-  const faq = await fetchFAQ();
+  const siteConfig = await fetchSiteConfig()
+  const faq = await fetchFAQ()
 
   return (
     <>
@@ -19,7 +20,7 @@ const Page: NextPage = async () => {
       </main>
       <Footer siteConfig={siteConfig} />
     </>
-  );
-};
+  )
+}
 
-export default Page;
+export default Page

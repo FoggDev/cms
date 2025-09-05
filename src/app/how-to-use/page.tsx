@@ -1,15 +1,15 @@
-import { Header } from "@/components/header";
-import { Footer } from "@/components/footer";
-import { HowToUseSection } from "@/components/how-to-use-section";
-import { VideoTutorialsSection } from "@/components/video-tutorials-section";
-import { fetchSiteConfig } from "@/actions/site-config";
-import { NextPage } from "next";
+import { NextPage } from 'next'
 
-import { fetchVideos } from "@/actions/videos";
+import { fetchSiteConfig } from '@/actions/site-config'
+import { fetchVideos } from '@/actions/videos'
+import { Footer } from '@/components/footer'
+import { Header } from '@/components/header'
+import { HowToUseSection } from '@/components/how-to-use-section'
+import { VideoTutorialsSection } from '@/components/video-tutorials-section'
 
 const Page: NextPage = async () => {
-  const siteConfig = await fetchSiteConfig();
-  const videos = await fetchVideos();
+  const siteConfig = await fetchSiteConfig()
+  const videos = await fetchVideos()
 
   return (
     <>
@@ -22,7 +22,7 @@ const Page: NextPage = async () => {
       </main>
       <Footer siteConfig={siteConfig} />
     </>
-  );
-};
+  )
+}
 
-export default Page;
+export default Page

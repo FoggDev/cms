@@ -1,12 +1,13 @@
-"use client";
+'use client'
 
-import { Button } from "@/components/ui/button";
-import { ArrowRight, Play } from "lucide-react";
-import { useState } from "react";
-import { VideoModal } from "@/components/video-modal";
+import { ArrowRight, Play } from 'lucide-react'
+import { useState } from 'react'
+
+import { Button } from '@/components/ui/button'
+import { VideoModal } from '@/components/video-modal'
 
 export function HeroSection({ hero }: any) {
-  const [isDemoModalOpen, setIsDemoModalOpen] = useState(false);
+  const [isDemoModalOpen, setIsDemoModalOpen] = useState(false)
 
   return (
     <>
@@ -14,7 +15,7 @@ export function HeroSection({ hero }: any) {
         <div className="container mx-auto max-w-7xl px-6">
           <div className="mx-auto max-w-4xl text-center">
             <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-6xl text-balance">
-              {hero.title}{" "}
+              {hero.title}{' '}
               <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
                 {hero.subtitle}
               </span>
@@ -49,7 +50,7 @@ export function HeroSection({ hero }: any) {
                 <img
                   src={
                     `http://localhost:4000${hero.heroImage.url}` ||
-                    "/placeholder.svg"
+                    '/placeholder.svg'
                   }
                   alt={hero.heroImage.alternativeText}
                   className="w-full"
@@ -67,5 +68,5 @@ export function HeroSection({ hero }: any) {
         title="MIRA Platform Demo"
       />
     </>
-  );
+  )
 }

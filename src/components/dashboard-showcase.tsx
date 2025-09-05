@@ -1,7 +1,7 @@
-import type { DashboardShowcaseSection as DashboardShowcaseSectionType } from "@/lib/mock-data";
+import type { DashboardShowcaseSection as DashboardShowcaseSectionType } from '@/lib/mock-data'
 
 interface DashboardShowcaseProps {
-  data: DashboardShowcaseSectionType;
+  data: DashboardShowcaseSectionType
 }
 
 export function DashboardShowcase({ showcases }: any) {
@@ -12,15 +12,15 @@ export function DashboardShowcase({ showcases }: any) {
           <div
             key={showcase.id}
             className={`grid grid-cols-1 gap-16 lg:grid-cols-2 lg:gap-24 items-center ${
-              index < showcases.length - 1 ? "mb-32" : ""
+              index < showcases.length - 1 ? 'mb-32' : ''
             }`}
           >
-            <div className={showcase.reverse ? "order-2 lg:order-1" : ""}>
+            <div className={showcase.reverse ? 'order-2 lg:order-1' : ''}>
               {showcase.reverse ? (
                 <div className="relative">
                   <div className="rounded-xl bg-muted/50 p-4 ring-1 ring-border">
                     <img
-                      src={showcase.image.url || "/placeholder.svg"}
+                      src={showcase.image.url || '/placeholder.svg'}
                       alt={showcase.image.alternativeText}
                       className="w-full rounded-lg shadow-lg"
                     />
@@ -120,7 +120,7 @@ export function DashboardShowcase({ showcases }: any) {
               )}
             </div>
             <div
-              className={showcase.reverse ? "order-1 lg:order-2" : "relative"}
+              className={showcase.reverse ? 'order-1 lg:order-2' : 'relative'}
             >
               {showcase.reverse ? (
                 <>
@@ -154,7 +154,7 @@ export function DashboardShowcase({ showcases }: any) {
               ) : (
                 <div className="rounded-xl bg-muted/50 p-4 ring-1 ring-border">
                   <img
-                    src={showcase.image.url || "/placeholder.svg"}
+                    src={showcase.image.url || '/placeholder.svg'}
                     alt={showcase.image.alternativeText}
                     className="w-full rounded-lg shadow-lg"
                   />
@@ -165,5 +165,5 @@ export function DashboardShowcase({ showcases }: any) {
         ))}
       </div>
     </section>
-  );
+  )
 }

@@ -147,5 +147,5 @@ export function Footer({ siteConfig }: { siteConfig: any }) {
         </div>
       </div>
     </footer>
-  );
+  )
 }

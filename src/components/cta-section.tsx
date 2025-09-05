@@ -1,5 +1,6 @@
-import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight } from 'lucide-react'
+
+import { Button } from '@/components/ui/button'
 
 export function CTASection({ cta }: { cta: any }) {
   return (
@@ -35,5 +36,5 @@ export function CTASection({ cta }: { cta: any }) {
         </div>
       </div>
     </section>
-  );
+  )
 }

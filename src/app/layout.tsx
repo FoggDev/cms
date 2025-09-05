@@ -1,21 +1,22 @@
-import type React from "react";
-import type { Metadata } from "next";
-import { GeistSans } from "geist/font/sans";
-import { GeistMono } from "geist/font/mono";
-import { Suspense } from "react";
-import "./globals.css";
+import { GeistMono } from 'geist/font/mono'
+import { GeistSans } from 'geist/font/sans'
+import type { Metadata } from 'next'
+import type React from 'react'
+import { Suspense } from 'react'
+
+import '@/styles/globals.css'
 
 export const metadata: Metadata = {
-  title: "MIRA - Supercharge Your Analytics",
+  title: 'MIRA - Supercharge Your Analytics',
   description:
     "Transform your data into actionable insights with MIRA's powerful analytics platform",
-  generator: "v0.app",
-};
+  generator: 'v0.app'
+}
 
 export default function RootLayout({
-  children,
+  children
 }: Readonly<{
-  children: React.ReactNode;
+  children: React.ReactNode
 }>) {
   return (
     <html lang="en">
@@ -23,5 +24,5 @@ export default function RootLayout({
         <Suspense fallback={null}>{children}</Suspense>
       </body>
     </html>
-  );
+  )
 }

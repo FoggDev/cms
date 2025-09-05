@@ -1,16 +1,16 @@
-"use server";
+'use server'
 
-import { api } from "@/lib/api";
+import { api } from '@/lib/api'
 
 export async function fetchWhatsNext() {
   try {
-    const { data } = await api.fetch("/what-is-nexts", {
-      cache: "no-store",
-    });
+    const { data } = await api.fetch('/what-is-nexts', {
+      cache: 'no-store'
+    })
 
-    return data;
+    return data
   } catch (error) {
-    console.error("Error fetching Whats Next data:", error);
-    return null;
+    console.error('Error fetching Whats Next data:', error)
+    return null
   }
 }

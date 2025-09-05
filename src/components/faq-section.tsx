@@ -1,27 +1,28 @@
-"use client";
+'use client'
 
-import { Card, CardContent } from "@/components/ui/card";
+import { ChevronDown } from 'lucide-react'
+import { useState } from 'react'
+
+import { Card, CardContent } from '@/components/ui/card'
 import {
   Collapsible,
   CollapsibleContent,
-  CollapsibleTrigger,
-} from "@/components/ui/collapsible";
-import { ChevronDown } from "lucide-react";
-import { useState } from "react";
+  CollapsibleTrigger
+} from '@/components/ui/collapsible'
 
 export function FAQSection({ faq }: { faq: any }) {
-  const [openItems, setOpenItems] = useState<number[]>([0]);
+  const [openItems, setOpenItems] = useState<number[]>([0])
 
   const faqs = faq.map((item: any) => ({
     question: item.question,
-    answer: item.answer,
-  }));
+    answer: item.answer
+  }))
 
   const toggleItem = (index: number) => {
     setOpenItems((prev) =>
       prev.includes(index) ? prev.filter((i) => i !== index) : [...prev, index]
-    );
-  };
+    )
+  }
 
   return (
     <section className="py-24 bg-background">
@@ -52,7 +53,7 @@ export function FAQSection({ faq }: { faq: any }) {
                         </h3>
                         <ChevronDown
                           className={`w-5 h-5 text-muted-foreground transition-transform ${
-                            openItems.includes(index) ? "rotate-180" : ""
+                            openItems.includes(index) ? 'rotate-180' : ''
                           }`}
                         />
                       </div>
@@ -72,5 +73,5 @@ export function FAQSection({ faq }: { faq: any }) {
         </div>
       </div>
     </section>
-  );
+  )
 }

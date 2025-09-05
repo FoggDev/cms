@@ -1,30 +1,31 @@
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import {
+  Brain,
+  Globe,
   Sparkles,
   Zap,
-  Globe,
-  Brain,
-  type Icon as LucideIcon,
-} from "lucide-react";
+  type Icon as LucideIcon
+} from 'lucide-react'
+
+import { Badge } from '@/components/ui/badge'
+import { Button } from '@/components/ui/button'
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 
 const icons = {
   Brain,
   Zap,
   Globe,
-  Sparkles,
-};
+  Sparkles
+}
 
-type IconName = keyof typeof icons;
+type IconName = keyof typeof icons
 
 type RoadmapItem = {
-  icon?: IconName;
-  title: string;
-  description: string;
-  isRecentUpdate?: boolean;
-  whenComes: string;
-};
+  icon?: IconName
+  title: string
+  description: string
+  isRecentUpdate?: boolean
+  whenComes: string
+}
 
 export function WhatsNextSection({ whatsNext }: { whatsNext: RoadmapItem[] }) {
   const upcomingFeatures = (whatsNext ?? [])
@@ -33,8 +34,8 @@ export function WhatsNextSection({ whatsNext }: { whatsNext: RoadmapItem[] }) {
       icon: feature.icon,
       title: feature.title,
       description: feature.description,
-      whenComes: feature.whenComes,
-    }));
+      whenComes: feature.whenComes
+    }))
 
   const recentUpdates = (whatsNext ?? [])
     .filter((update) => update.isRecentUpdate === true)
@@ -42,8 +43,8 @@ export function WhatsNextSection({ whatsNext }: { whatsNext: RoadmapItem[] }) {
       icon: update.icon,
       title: update.title,
       description: update.description,
-      whenComes: update.whenComes,
-    }));
+      whenComes: update.whenComes
+    }))
 
   return (
     <section className="py-24 bg-gradient-to-b from-muted/20 to-background">
@@ -67,7 +68,7 @@ export function WhatsNextSection({ whatsNext }: { whatsNext: RoadmapItem[] }) {
             </h3>
             <div className="space-y-6">
               {upcomingFeatures.map((feature, index) => {
-                const Icon = (feature.icon && icons[feature.icon]) || Globe;
+                const Icon = (feature.icon && icons[feature.icon]) || Globe
 
                 return (
                   <Card
@@ -84,7 +85,7 @@ export function WhatsNextSection({ whatsNext }: { whatsNext: RoadmapItem[] }) {
                             {feature.title}
                           </CardTitle>
                         </div>
-                        <Badge variant={"secondary"} className="ml-2">
+                        <Badge variant={'secondary'} className="ml-2">
                           {feature.whenComes}
                         </Badge>
                       </div>
@@ -95,7 +96,7 @@ export function WhatsNextSection({ whatsNext }: { whatsNext: RoadmapItem[] }) {
                       </p>
                     </CardContent>
                   </Card>
-                );
+                )
               })}
             </div>
           </div>
@@ -109,8 +110,7 @@ export function WhatsNextSection({ whatsNext }: { whatsNext: RoadmapItem[] }) {
               <CardContent className="p-6">
                 <div className="space-y-4">
                   {recentUpdates.map((update, index) => {
-                    const Icon =
-                      (update.icon && icons[update.icon]) || Sparkles;
+                    const Icon = (update.icon && icons[update.icon]) || Sparkles
                     return (
                       <div
                         key={`${update.title}-${index}`}
@@ -135,7 +135,7 @@ export function WhatsNextSection({ whatsNext }: { whatsNext: RoadmapItem[] }) {
                           </p>
                         </div>
                       </div>
-                    );
+                    )
                   })}
                 </div>
 
@@ -172,5 +172,5 @@ export function WhatsNextSection({ whatsNext }: { whatsNext: RoadmapItem[] }) {
         </div>
       </div>
     </section>
-  );
+  )
 }

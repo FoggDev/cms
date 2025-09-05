@@ -1,20 +1,21 @@
-import { Header } from "@/components/header";
-import { Footer } from "@/components/footer";
-import { WhatsNextSection } from "@/components/whats-next-section";
-import { fetchSiteConfig } from "@/actions/site-config";
-import { NextPage } from "next";
-import { fetchWhatsNext } from "@/actions/what-is-next";
+import { NextPage } from 'next'
+
+import { fetchSiteConfig } from '@/actions/site-config'
+import { fetchWhatsNext } from '@/actions/what-is-next'
+import { Footer } from '@/components/footer'
+import { Header } from '@/components/header'
+import { WhatsNextSection } from '@/components/whats-next-section'
 
 const Page: NextPage = async () => {
-  const siteConfig = await fetchSiteConfig();
-  const whatsNext = await fetchWhatsNext();
+  const siteConfig = await fetchSiteConfig()
+  const whatsNext = await fetchWhatsNext()
 
   if (!whatsNext) {
-    return <div>No updates found</div>;
+    return <div>No updates found</div>
   }
 
   if (!siteConfig) {
-    return <div>No site config found</div>;
+    return <div>No site config found</div>
   }
 
   return (
@@ -27,7 +28,7 @@ const Page: NextPage = async () => {
       </main>
       <Footer siteConfig={siteConfig} />
     </>
-  );
-};
+  )
+}
 
-export default Page;
+export default Page
