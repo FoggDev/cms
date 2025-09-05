@@ -48,7 +48,7 @@ export function HeroSection({ hero }: any) {
               <div className="rounded-md bg-card shadow-2xl ring-1 ring-border overflow-hidden">
                 <img
                   src={
-                    `${process.env.MEDIA_URL}${hero.heroImage.url}` ||
+                    `http://localhost:4000${hero.heroImage.url}` ||
                     "/placeholder.svg"
                   }
                   alt={hero.heroImage.alternativeText}

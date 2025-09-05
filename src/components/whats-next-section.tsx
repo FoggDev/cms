@@ -72,9 +72,7 @@ export function WhatsNextSection({ whatsNext }: { whatsNext: RoadmapItem[] }) {
                 return (
                   <Card
                     key={`${feature.title}-${index}`}
-                    className={`border-border/50 ${
-                      feature.highlight ? "ring-2 ring-primary/20" : ""
-                    }`}
+                    className={`border-border/50`}
                   >
                     <CardHeader className="pb-3">
                       <div className="flex items-start justify-between">
@@ -86,10 +84,7 @@ export function WhatsNextSection({ whatsNext }: { whatsNext: RoadmapItem[] }) {
                             {feature.title}
                           </CardTitle>
                         </div>
-                        <Badge
-                          variant={feature.highlight ? "default" : "secondary"}
-                          className="ml-2"
-                        >
+                        <Badge variant={"secondary"} className="ml-2">
                           {feature.whenComes}
                         </Badge>
                       </div>
@@ -129,9 +124,9 @@ export function WhatsNextSection({ whatsNext }: { whatsNext: RoadmapItem[] }) {
                             <p className="font-medium text-foreground">
                               {update.title}
                             </p>
-                            {update.status && (
+                            {update.whenComes && (
                               <Badge variant="secondary" className="text-xs">
-                                {update.status}
+                                {update.whenComes}
                               </Badge>
                             )}
                           </div>

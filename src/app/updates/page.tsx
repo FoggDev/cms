@@ -9,6 +9,14 @@ const Page: NextPage = async () => {
   const siteConfig = await fetchSiteConfig();
   const whatsNext = await fetchWhatsNext();
 
+  if (!whatsNext) {
+    return <div>No updates found</div>;
+  }
+
+  if (!siteConfig) {
+    return <div>No site config found</div>;
+  }
+
   return (
     <>
       <Header siteConfig={siteConfig} />
